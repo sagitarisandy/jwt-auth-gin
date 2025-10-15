@@ -2,7 +2,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/sagitarisandy/jwt-auth-gin/controllers"
 	"github.com/sagitarisandy/jwt-auth-gin/initializers"
+	"github.com/sagitarisandy/jwt-auth-gin/middleware"
 )
 
 func init() {
@@ -12,11 +14,11 @@ func init() {
 }
 
 func main() {
-	router := gin.Default()
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-	router.Run()
+	r := gin.Default()
+
+	r.POST("/signup", controllers.Signup)
+	r.POST("/login", controllers.Login)
+	r.GET("/validate", middleware.RequireAuth, controllers.Validate)
+
+	r.Run()
 }

@@ -2,6 +2,10 @@
 
 Simple starter project showing a Gin HTTP server with JWT auth initializers.
 
+## Preview
+
+![https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40seetharamugn%2Fjwt-oauth2-0-with-go-gin-gorm-mysql-7d51a2168ec7&psig=AOvVaw0qzRv-PricHowKz_AA54qq&ust=1760609061849000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCPCnsv_5pZADFQAAAAAdAAAAABAE](public/auth.png)
+
 ## What this repo contains
 
 - `main.go` — application entry. Calls `initializers.LoadEnvVariable()` from `init()` and starts a Gin server with a `/ping` route.
@@ -33,7 +37,7 @@ go install github.com/githubnemo/CompileDaemon@latest
 # make sure GOPATH/bin is on your PATH, e.g. add to ~/.zshrc
 export PATH="$PATH:$(go env GOPATH)/bin"
 # then run
-CompileDaemon --command="./jwt-auth-gin"
+compiledaemon --command="./jwt-auth-gin"
 ```
 
 Alternatives: `air`, `reflex` (install via `go install github.com/cosmtrek/air@latest` or `go install github.com/cespare/reflex@latest`).
